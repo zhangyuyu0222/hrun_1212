@@ -1,0 +1,22 @@
+
+name: 发货接口 api
+base_url: ${ENV(BASE_URL)}
+
+request:
+    # 发货接口依赖管理员登录接口，cookie关联
+    url: /mtx/admin.php?s=/order/delivery.html
+    method: POST
+    headers:
+        X-Requested-With: 'XMLHttpRequest'
+    data:
+        # order_id和user_id都是从下订单响应值里边提取
+        express_number: 444445
+        id: $order_id
+        express_id: 1
+        user_id: $user_id
+
+
+validate:
+    - eq: ["status_code", 200]
+    - eq: [content.msg, 发货成功]
+

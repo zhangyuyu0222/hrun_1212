@@ -1,0 +1,8 @@
+
+config:
+    name: "管理员登录 testcase"
+
+teststeps:
+-
+    name: 管理员登录接口测试
+    api: api/admin_api.yml

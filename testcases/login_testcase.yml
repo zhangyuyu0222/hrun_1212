@@ -1,0 +1,13 @@
+
+config:
+    name: "login testcase"
+    variables:
+        title: 登录成功
+
+teststeps:
+-
+    name: $title
+    api: api/login_api.yml
+
+    validate:
+        - eq: [ content.msg, $expect ]

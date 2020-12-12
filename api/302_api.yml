@@ -1,0 +1,13 @@
+
+name: 302 api
+base_url: ${ENV(BASE_URL)}
+
+request:
+    # url需要从响应的jump_url获取
+    url: $jump_url
+    method: GET
+    allow_redirects: False
+
+validate:
+    - eq: ["status_code", 302]
+

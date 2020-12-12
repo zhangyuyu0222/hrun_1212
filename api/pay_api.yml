@@ -1,0 +1,12 @@
+
+name: pay api
+base_url: ${ENV(BASE_URL)}
+
+request:
+    # url需要从302接口响应头的location获取
+    url: $location
+    method: GET
+
+validate:
+    - eq: ["status_code", 200]
+    - contains: [content, 支付成功]

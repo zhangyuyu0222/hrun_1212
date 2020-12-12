@@ -1,0 +1,15 @@
+
+config:
+    name: "order testcase"
+
+
+teststeps:
+-
+    name: 对登录接口发起请求
+    api: api/login_api.yml
+    validate:
+        - eq: [ content.msg, 登录成功]
+
+-
+    name: 对提交订单发起请求
+    api: api/order_api.yml
